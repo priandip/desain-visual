@@ -58,6 +58,7 @@
             this.CariBtn.TabIndex = 0;
             this.CariBtn.Text = "Cari";
             this.CariBtn.UseVisualStyleBackColor = false;
+            this.CariBtn.Click += new System.EventHandler(this.CariBtn_Click);
             // 
             // TanggalSurat
             // 
