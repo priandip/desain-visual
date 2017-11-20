@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace New
 {
@@ -26,6 +27,14 @@ namespace New
             string lampiran = Lampiran.Text;
             string tanggalTerima = TanggalTerima.Value.ToString("yyyy-MM-dd");
             string uploadDirectory = Path.Combine(Application.StartupPath, "surat");
+
+            DatabaseConnector DB = new DatabaseConnector();
+            string query = "INSERT INTO surat_masuk (no_surat, perihal, tgl_surat, tgl_terima) VALUES (@no_surat, @perihal, @tgl_surat, @tgl_terima)";
+            MySqlCommand command = new MySqlCommand(query, DB.Connection);
+            command.Parameters.AddWithValue("@no_surat", noSurat);
+            command.Parameters.AddWithValue("@perihal", perihal);
+            command.Parameters.AddWithValue("@tgl_surat", tanggalSurat);
+            command.Parameters.AddWithValue("@tgl_terima", tanggalTerima);
 
             if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
 
