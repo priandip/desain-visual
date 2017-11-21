@@ -13,6 +13,8 @@ namespace New
 {
     public partial class SuratMasuk : UserControl
     {
+        private string filePath;
+
         public SuratMasuk()
         {
             InitializeComponent();
@@ -24,27 +26,55 @@ namespace New
             string noSurat = NoSurat.Text;
             string tanggalSurat = TanggalSurat.Value.ToString("yyyy-MM-dd");
             string perihal = Perihal.Text;
-            string lampiran = Lampiran.Text;
+            string lampiran = filePath;
             string tanggalTerima = TanggalTerima.Value.ToString("yyyy-MM-dd");
             string uploadDirectory = Path.Combine(Application.StartupPath, "surat");
 
             DatabaseConnector DB = new DatabaseConnector();
-            string query = "INSERT INTO surat_masuk (no_surat, perihal, pengirim, tgl_surat, tgl_terima, lampiran) VALUES (@no_surat, @perihal, @pengirim, @tgl_surat, @tgl_terima, @lampiran)";
+            string query = "INSERT INTO surat_masuk (no_surat, perihal, pengirim, tgl_surat, tgl_terima, lampiran) VALUES (@no_surat, @perihal, @pengirim, @tgl_surat, @tgl_terima, @lampiran);";
+
+            string filename = noSurat + Path.GetExtension(lampiran);
+
             MySqlCommand command = new MySqlCommand(query, DB.Connection);
             command.Parameters.AddWithValue("@no_surat", noSurat);
             command.Parameters.AddWithValue("@perihal", perihal);
             command.Parameters.AddWithValue("@pengirim", pengirim);
             command.Parameters.AddWithValue("@tgl_surat", tanggalSurat);
             command.Parameters.AddWithValue("@tgl_terima", tanggalTerima);
-
-            string filename = noSurat + Path.GetExtension(lampiran);
             command.Parameters.AddWithValue("@lampiran", filename);
 
-            command.ExecuteNonQuery();
+            try
+            {
+                File.Copy(lampiran, Path.Combine(uploadDirectory, filename));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                DB.Connection.Open();
+                if (command.ExecuteNonQuery() != -1)
+                {
+                    MessageBox.Show("Berhasil membuat surat masuk");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                if(ex.Number == 1062)
+                {
+                    MessageBox.Show("Ada record dengan nomor surat yang sama");
+                }
+            }
+            finally
+            {
+                DB.Connection.Close();
+            }
 
             if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
 
-            File.Copy(lampiran, Path.Combine(uploadDirectory, filename));
+            
 
         }
 
@@ -54,18 +84,14 @@ namespace New
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                Lampiran.Text = ofd.FileName;
+                this.filePath = ofd.FileName;
+                Lampiran.Text = Path.GetFileName(filePath);
             }
         }
 
-        private void SuratMasuk_Load(object sender, EventArgs e)
+        private void NoSurat_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

@@ -76,7 +76,6 @@
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pengirim";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Pengirim
             // 
@@ -141,6 +140,7 @@
             this.NoSurat.Name = "NoSurat";
             this.NoSurat.Size = new System.Drawing.Size(200, 20);
             this.NoSurat.TabIndex = 9;
+            this.NoSurat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoSurat_KeyPress);
             // 
             // Perihal
             // 
@@ -151,6 +151,7 @@
             // 
             // Lampiran
             // 
+            this.Lampiran.Enabled = false;
             this.Lampiran.Location = new System.Drawing.Point(145, 172);
             this.Lampiran.Name = "Lampiran";
             this.Lampiran.Size = new System.Drawing.Size(200, 20);
@@ -213,7 +214,6 @@
             this.Controls.Add(this.CariBtn);
             this.Name = "SuratMasuk";
             this.Size = new System.Drawing.Size(622, 406);
-            this.Load += new System.EventHandler(this.SuratMasuk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
