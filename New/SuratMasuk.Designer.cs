@@ -73,9 +73,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Dari";
+            this.label1.Text = "Pengirim";
             // 
             // Dari
             // 
