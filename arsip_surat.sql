@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20 Nov 2017 pada 14.32
+-- Generation Time: 21 Nov 2017 pada 06.54
 -- Versi Server: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -25,16 +25,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lampiran`
+-- Struktur dari tabel `arsip`
 --
 
-CREATE TABLE `lampiran` (
-  `id_lampiran` int(11) NOT NULL,
-  `jenis` varchar(20) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `keterangan` varchar(50) NOT NULL,
-  `id_surat` int(11) NOT NULL,
-  `file` varchar(20) NOT NULL
+CREATE TABLE `arsip` (
+  `no_arsip` varchar(20) NOT NULL,
+  `no_surat` varchar(20) NOT NULL,
+  `lokasi_arsip` varchar(40) NOT NULL,
+  `keterangan` varchar(40) NOT NULL,
+  `tgl_arsip` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -44,15 +43,13 @@ CREATE TABLE `lampiran` (
 --
 
 CREATE TABLE `surat_keluar` (
-  `id_surat` int(11) NOT NULL,
-  `no_surat` varchar(10) NOT NULL,
-  `perihal` varchar(50) NOT NULL,
+  `no_surat` varchar(20) NOT NULL,
+  `perihal` varchar(40) NOT NULL,
   `tgl_kirim` date NOT NULL,
-  `tgl_proses` date NOT NULL,
-  `status` varchar(10) NOT NULL,
-  `tembusan` varchar(20) NOT NULL,
-  `dari` int(11) NOT NULL,
-  `id_lampiran` int(11) NOT NULL
+  `tgl_surat` date NOT NULL,
+  `lampiran` varchar(40) NOT NULL,
+  `tembusan` varchar(200) NOT NULL,
+  `kepada` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -62,14 +59,12 @@ CREATE TABLE `surat_keluar` (
 --
 
 CREATE TABLE `surat_masuk` (
-  `id_surat` int(11) NOT NULL,
-  `no_surat` varchar(10) NOT NULL,
-  `perihal` varchar(20) NOT NULL,
+  `no_surat` varchar(20) NOT NULL,
+  `perihal` varchar(40) NOT NULL,
   `pengirim` varchar(20) NOT NULL,
   `tgl_surat` date NOT NULL,
   `tgl_terima` date NOT NULL,
-  `tgl_proses` date NOT NULL,
-  `status` varchar(10) NOT NULL
+  `lampiran` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -95,22 +90,22 @@ INSERT INTO `user` (`username`, `password`) VALUES
 --
 
 --
--- Indexes for table `lampiran`
+-- Indexes for table `arsip`
 --
-ALTER TABLE `lampiran`
-  ADD PRIMARY KEY (`id_lampiran`);
+ALTER TABLE `arsip`
+  ADD PRIMARY KEY (`no_arsip`);
 
 --
 -- Indexes for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  ADD PRIMARY KEY (`id_surat`);
+  ADD PRIMARY KEY (`no_surat`);
 
 --
 -- Indexes for table `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  ADD PRIMARY KEY (`id_surat`);
+  ADD PRIMARY KEY (`no_surat`);
 
 --
 -- Indexes for table `user`

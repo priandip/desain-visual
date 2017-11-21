@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LogoutBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.LaporanBtn = new System.Windows.Forms.Button();
             this.ArsipBtn = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
-            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.LogoutBtn);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.LaporanBtn);
@@ -58,6 +60,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 501);
             this.panel1.TabIndex = 0;
+            // 
+            // LogoutBtn
+            // 
+            this.LogoutBtn.FlatAppearance.BorderSize = 0;
+            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 366);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.Size = new System.Drawing.Size(163, 52);
+            this.LogoutBtn.TabIndex = 9;
+            this.LogoutBtn.Text = "Log Out";
+            this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // panel4
             // 
@@ -169,19 +185,14 @@
             this.panel.Size = new System.Drawing.Size(672, 393);
             this.panel.TabIndex = 5;
             // 
-            // LogoutBtn
+            // panel5
             // 
-            this.LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 366);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(163, 52);
-            this.LogoutBtn.TabIndex = 9;
-            this.LogoutBtn.Text = "Log Out";
-            this.LogoutBtn.UseVisualStyleBackColor = true;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel5.Location = new System.Drawing.Point(1, 369);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 46);
+            this.panel5.TabIndex = 10;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Form1
             // 
@@ -219,6 +230,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button LogoutBtn;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 
