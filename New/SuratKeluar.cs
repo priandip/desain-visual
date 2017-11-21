@@ -16,9 +16,9 @@ namespace New
             InitializeComponent();
         }
 
-        private void SimpanBtn_Click(object sender, EventArgs e);
+        private void SimpanBtn_Click(object sender, EventArgs e)
     {
-        string kepada = Kepada.text
+            //string kepada = Kepada.Text;
     }
 
         private void SuratKeluar_Load(object sender, EventArgs e)
