@@ -76,6 +76,7 @@
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pengirim";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Dari
             // 
@@ -212,6 +213,7 @@
             this.Controls.Add(this.CariBtn);
             this.Name = "SuratMasuk";
             this.Size = new System.Drawing.Size(622, 406);
+            this.Load += new System.EventHandler(this.SuratMasuk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

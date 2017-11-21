@@ -43,7 +43,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SimpanBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -180,19 +180,19 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 15;
             // 
-            // button2
+            // SimpanBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(148, 283);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Simpan";
-            this.button2.UseVisualStyleBackColor = false;
+            this.SimpanBtn.BackColor = System.Drawing.Color.Black;
+            this.SimpanBtn.FlatAppearance.BorderSize = 0;
+            this.SimpanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SimpanBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpanBtn.ForeColor = System.Drawing.Color.White;
+            this.SimpanBtn.Location = new System.Drawing.Point(148, 283);
+            this.SimpanBtn.Name = "SimpanBtn";
+            this.SimpanBtn.Size = new System.Drawing.Size(75, 23);
+            this.SimpanBtn.TabIndex = 16;
+            this.SimpanBtn.Text = "Simpan";
+            this.SimpanBtn.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.SimpanBtn);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -253,7 +253,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SimpanBtn;
         private System.Windows.Forms.Button button3;
     }
 }
