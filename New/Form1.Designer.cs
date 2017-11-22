@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.LogoutBtn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.LaporanBtn = new System.Windows.Forms.Button();
             this.ArsipBtn = new System.Windows.Forms.Button();
             this.SuratKeluarBtn = new System.Windows.Forms.Button();
@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +49,6 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.LogoutBtn);
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.LaporanBtn);
             this.panel1.Controls.Add(this.ArsipBtn);
             this.panel1.Controls.Add(this.SuratKeluarBtn);
@@ -60,6 +58,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 501);
             this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel5.Location = new System.Drawing.Point(1, 369);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 46);
+            this.panel5.TabIndex = 10;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // LogoutBtn
             // 
@@ -74,14 +81,6 @@
             this.LogoutBtn.Text = "Log Out";
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(0, 38);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 52);
-            this.panel4.TabIndex = 5;
             // 
             // LaporanBtn
             // 
@@ -185,15 +184,6 @@
             this.panel.Size = new System.Drawing.Size(672, 393);
             this.panel.TabIndex = 5;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(1, 369);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 46);
-            this.panel5.TabIndex = 10;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +217,6 @@
         private System.Windows.Forms.Button SuratMasukBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Panel panel5;

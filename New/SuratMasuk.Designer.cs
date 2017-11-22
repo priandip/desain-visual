@@ -43,6 +43,7 @@
             this.TanggalTerima = new System.Windows.Forms.DateTimePicker();
             this.SimpanBtn = new System.Windows.Forms.Button();
             this.HapusBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CariBtn
@@ -194,10 +195,22 @@
             this.HapusBtn.Text = "Hapus";
             this.HapusBtn.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Surat Masuk";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // SuratMasuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.HapusBtn);
             this.Controls.Add(this.SimpanBtn);
             this.Controls.Add(this.TanggalTerima);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.DateTimePicker TanggalTerima;
         private System.Windows.Forms.Button SimpanBtn;
         private System.Windows.Forms.Button HapusBtn;
+        private System.Windows.Forms.Label label7;
     }
 }

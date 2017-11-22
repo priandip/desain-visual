@@ -86,6 +86,11 @@ namespace New
                 Lampiran.Text = Path.GetFileName(filePath);
             }
         }
+
+        private void SuratKeluar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
         

@@ -55,5 +55,10 @@ namespace New
                 DB.Connection.Close();
             }
         }
+
+        private void Laporan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
