@@ -142,7 +142,6 @@
             this.NoSurat.Name = "NoSurat";
             this.NoSurat.Size = new System.Drawing.Size(200, 20);
             this.NoSurat.TabIndex = 9;
-            this.NoSurat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoSurat_KeyPress);
             // 
             // Perihal
             // 
@@ -216,6 +215,7 @@
             this.Controls.Add(this.CariBtn);
             this.Name = "SuratMasuk";
             this.Size = new System.Drawing.Size(622, 406);
+            this.Load += new System.EventHandler(this.SuratMasuk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

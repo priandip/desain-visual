@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace New
 {
@@ -14,6 +15,21 @@ namespace New
         public Arsip()
         {
             InitializeComponent();
+        }
+
+        private void Arsip_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SimpanBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

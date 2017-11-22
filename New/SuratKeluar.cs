@@ -86,11 +86,6 @@ namespace New
                 Lampiran.Text = Path.GetFileName(filePath);
             }
         }
-
-        private void NoSurat_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
     }
 
         

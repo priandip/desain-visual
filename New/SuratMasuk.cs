@@ -90,17 +90,17 @@ namespace New
             }
         }
 
-        private void NoSurat_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void Pengirim_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SuratMasuk_Load(object sender, EventArgs e)
         {
 
         }
