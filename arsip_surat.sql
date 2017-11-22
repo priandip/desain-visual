@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Nov 2017 pada 06.54
+-- Generation Time: 22 Nov 2017 pada 08.51
 -- Versi Server: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -52,6 +52,15 @@ CREATE TABLE `surat_keluar` (
   `kepada` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `surat_keluar`
+--
+
+INSERT INTO `surat_keluar` (`no_surat`, `perihal`, `tgl_kirim`, `tgl_surat`, `lampiran`, `tembusan`, `kepada`) VALUES
+('1242', 'surat tugas', '2017-11-22', '0000-00-00', '1242.txt', 'ooo', 'ad'),
+('12a', 'surat tugas', '2017-11-22', '0000-00-00', '12a.txt', 'norman dkk', 'guna'),
+('69', 'Ah!', '2017-11-22', '0000-00-00', '69.txt', 'Ah!', 'Koko');
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +75,15 @@ CREATE TABLE `surat_masuk` (
   `tgl_terima` date NOT NULL,
   `lampiran` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `surat_masuk`
+--
+
+INSERT INTO `surat_masuk` (`no_surat`, `perihal`, `pengirim`, `tgl_surat`, `tgl_terima`, `lampiran`) VALUES
+('099', 'tugas tugas', 'norman1', '2017-11-22', '2017-11-22', '099.txt'),
+('123', 'tugas', 'norman', '2017-11-22', '2017-11-22', '123.txt'),
+('123123123', '12313123111', 'batok', '2017-11-22', '2017-11-22', '123123123.txt');
 
 -- --------------------------------------------------------
 
@@ -83,7 +101,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
-('admin', 'admin');
+('direktur', 'direktur'),
+('pegawai', 'pegawai');
 
 --
 -- Indexes for dumped tables

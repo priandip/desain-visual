@@ -42,7 +42,7 @@
             this.Lampiran = new System.Windows.Forms.TextBox();
             this.TanggalTerima = new System.Windows.Forms.DateTimePicker();
             this.SimpanBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.HapusBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CariBtn
@@ -76,6 +76,7 @@
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pengirim";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Pengirim
             // 
@@ -83,6 +84,7 @@
             this.Pengirim.Name = "Pengirim";
             this.Pengirim.Size = new System.Drawing.Size(200, 20);
             this.Pengirim.TabIndex = 3;
+            this.Pengirim.TextChanged += new System.EventHandler(this.Pengirim_TextChanged);
             // 
             // label2
             // 
@@ -179,25 +181,25 @@
             this.SimpanBtn.UseVisualStyleBackColor = false;
             this.SimpanBtn.Click += new System.EventHandler(this.SimpanBtn_Click);
             // 
-            // button3
+            // HapusBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(270, 249);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Hapus";
-            this.button3.UseVisualStyleBackColor = false;
+            this.HapusBtn.BackColor = System.Drawing.Color.Black;
+            this.HapusBtn.FlatAppearance.BorderSize = 0;
+            this.HapusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HapusBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HapusBtn.ForeColor = System.Drawing.Color.White;
+            this.HapusBtn.Location = new System.Drawing.Point(270, 249);
+            this.HapusBtn.Name = "HapusBtn";
+            this.HapusBtn.Size = new System.Drawing.Size(75, 23);
+            this.HapusBtn.TabIndex = 14;
+            this.HapusBtn.Text = "Hapus";
+            this.HapusBtn.UseVisualStyleBackColor = false;
             // 
             // SuratMasuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.HapusBtn);
             this.Controls.Add(this.SimpanBtn);
             this.Controls.Add(this.TanggalTerima);
             this.Controls.Add(this.Lampiran);
@@ -235,6 +237,6 @@
         private System.Windows.Forms.TextBox Lampiran;
         private System.Windows.Forms.DateTimePicker TanggalTerima;
         private System.Windows.Forms.Button SimpanBtn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button HapusBtn;
     }
 }

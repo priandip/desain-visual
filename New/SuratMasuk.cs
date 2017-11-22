@@ -28,7 +28,7 @@ namespace New
             string perihal = Perihal.Text;
             string lampiran = filePath;
             string tanggalTerima = TanggalTerima.Value.ToString("yyyy-MM-dd");
-            string uploadDirectory = Path.Combine(Application.StartupPath, "surat");
+            string uploadDirectory = @Path.Combine(Application.StartupPath, "surat_masuk");
 
             DatabaseConnector DB = new DatabaseConnector();
             string query = "INSERT INTO surat_masuk (no_surat, perihal, pengirim, tgl_surat, tgl_terima, lampiran) VALUES (@no_surat, @perihal, @pengirim, @tgl_surat, @tgl_terima, @lampiran);";
@@ -45,7 +45,8 @@ namespace New
 
             try
             {
-                File.Copy(lampiran, Path.Combine(uploadDirectory, filename));
+                if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
+                File.Copy(@lampiran, Path.Combine(uploadDirectory, filename));
             }
             catch (Exception ex)
             {
@@ -72,12 +73,12 @@ namespace New
                 DB.Connection.Close();
             }
 
-            if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
 
             
 
         }
 
+        //cari 
         private void CariBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -92,6 +93,16 @@ namespace New
         private void NoSurat_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pengirim_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
