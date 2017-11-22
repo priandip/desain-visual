@@ -33,7 +33,7 @@ namespace New
             DatabaseConnector DB = new DatabaseConnector();
             string query = "INSERT INTO surat_keluar (no_surat, perihal, tgl_kirim, tgl_surat, lampiran, tembusan, kepada) VALUES (@no_surat, @perihal, @tgl_kirim, @tgl_surat, @lampiran, @tembusan, @kepada);";
 
-            string filename = nosurat + Path.GetExtension(lampiran);
+            string filename = nosurat + Path.GetExtension(this.filePath);
 
             MySqlCommand command = new MySqlCommand(query, DB.Connection);
             command.Parameters.AddWithValue("@no_surat", nosurat);
@@ -47,7 +47,7 @@ namespace New
             try
             {
                 if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
-                File.Copy(@lampiran, Path.Combine(uploadDirectory, filename));
+                File.Copy(@filePath, Path.Combine(uploadDirectory, filename));
             }
             catch (Exception ex)
             {
